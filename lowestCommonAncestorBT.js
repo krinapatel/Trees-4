@@ -17,12 +17,13 @@
  * @return {TreeNode}
  */
 
+//Recursion Solution
+
  let pathP;
  let pathQ;
  var recursion = function(root, p, q, path) {
      //base case
      if(root === null) return null;
-     console.log(root.val);
      //logic
      if(p.val === root.val) {
          pathP = [...path];
@@ -50,7 +51,6 @@
      pathP = [];
      pathQ = [];
      recursion(root, p, q, []);
-     //console.log(pathP);
      for(let i = 0; i < pathP.length; i++) {
          if(pathP[i] !== pathQ[i]) return pathP[i-1];
      }
